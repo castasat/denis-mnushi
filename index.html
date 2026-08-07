@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #F5F0E8; /* бежевый фон */
+            background-color: #F5F0E8;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -33,7 +33,6 @@
             border: 1px solid #e5ddd0;
         }
 
-        /* ===== ДЕКОРАТИВНАЯ ЛИНИЯ (глубокий синий) ===== */
         .divider {
             width: 60px;
             height: 3px;
@@ -42,7 +41,6 @@
             border-radius: 4px;
         }
 
-        /* ===== ИМЯ ===== */
         .name {
             font-size: 28px;
             font-weight: 700;
@@ -57,7 +55,6 @@
             color: #6B7F5A;
         }
 
-        /* ===== ПОДЗАГОЛОВОК ===== */
         .title {
             font-size: 16px;
             font-weight: 500;
@@ -70,7 +67,6 @@
             font-weight: 700;
         }
 
-        /* ===== СЛОГАН ===== */
         .slogan {
             font-size: 15px;
             font-weight: 400;
@@ -81,7 +77,6 @@
             padding: 0 10px;
         }
 
-        /* ===== АДРЕС ===== */
         .address {
             font-size: 15px;
             color: #4A5D3C;
@@ -99,7 +94,6 @@
             color: #7A8A6A;
         }
 
-        /* ===== РАЗДЕЛИТЕЛЬ СИНИЙ (широкий) ===== */
         .divider-wide {
             width: 100%;
             height: 2px;
@@ -109,7 +103,6 @@
             opacity: 0.5;
         }
 
-        /* ===== КНОПКИ ===== */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -135,7 +128,7 @@
             transform: scale(0.97);
         }
 
-        /* Иконки внутри кнопок */
+        /* ===== ИКОНКИ ===== */
         .btn-icon {
             width: 24px;
             height: 24px;
@@ -152,7 +145,9 @@
             display: block;
         }
 
-        /* Кнопка TELEGRAM */
+        /* ===== КНОПКИ ===== */
+
+        /* TELEGRAM — тёмно-синий фон, белая иконка */
         .btn-telegram {
             background-color: #1A2F4F;
             color: #ffffff;
@@ -161,8 +156,11 @@
         .btn-telegram:hover {
             background-color: #0F1F33;
         }
+        .btn-telegram .btn-icon img {
+            filter: brightness(0) invert(1);
+        }
 
-        /* Кнопка WHATSAPP */
+        /* WHATSAPP — оливковый фон, белая иконка */
         .btn-whatsapp {
             background-color: #4A5D3C;
             color: #ffffff;
@@ -171,8 +169,11 @@
         .btn-whatsapp:hover {
             background-color: #3A4D2E;
         }
+        .btn-whatsapp .btn-icon img {
+            filter: brightness(0) invert(1);
+        }
 
-        /* Кнопка INSTAGRAM */
+        /* INSTAGRAM — белый фон, тёмно-синяя иконка */
         .btn-instagram {
             background-color: #ffffff;
             color: #1A2F4F;
@@ -181,8 +182,11 @@
         .btn-instagram:hover {
             background-color: #f0ebe3;
         }
+        .btn-instagram .btn-icon img {
+            filter: brightness(0);
+        }
 
-        /* Кнопка PHONE (звонок) */
+        /* PHONE — прозрачный фон, оливковый текст, эмодзи */
         .btn-phone {
             background-color: transparent;
             color: #4A5D3C;
@@ -191,8 +195,11 @@
         .btn-phone:hover {
             background-color: #efe8dd;
         }
+        .btn-phone .btn-icon {
+            font-size: 22px;
+            line-height: 1;
+        }
 
-        /* ===== ПОДВАЛ ===== */
         .footer {
             margin-top: 24px;
             font-size: 12px;
@@ -206,7 +213,6 @@
             font-weight: 500;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 480px) {
             .card {
                 padding: 30px 20px 25px;
@@ -229,34 +235,27 @@
 
     <div class="card">
 
-        <!-- ИМЯ -->
         <div class="name">
             DENIS<br /><span>DMITRIENKO</span>
         </div>
 
-        <!-- ПОДЗАГОЛОВОК -->
         <div class="title">
             Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong>
         </div>
 
-        <!-- ДЕКОРАТИВНАЯ ЛИНИЯ -->
         <div class="divider"></div>
 
-        <!-- СЛОГАН -->
         <div class="slogan">
             «Тишина и покой для вашей нервной системы»
         </div>
 
-        <!-- АДРЕС -->
         <div class="address">
             <span class="salon">📍 Shine Beauty Salon</span><br />
             Herceg Novi <span class="note">(бывший Relax)</span>
         </div>
 
-        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
         <div class="divider-wide"></div>
 
-        <!-- КНОПКИ СВЯЗИ -->
         <div class="buttons">
 
             <!-- TELEGRAM -->
@@ -283,15 +282,14 @@
                 Смотреть Instagram
             </a>
 
-            <!-- ПОЗВОНИТЬ -->
+            <!-- PHONE -->
             <a href="tel:+38268387810" class="btn btn-phone">
-                <span class="btn-icon" style="font-size:22px; line-height:1;">📞</span>
+                <span class="btn-icon">📞</span>
                 Позвонить: +382 68 387 810
             </a>
 
         </div>
 
-        <!-- ПОДВАЛ -->
         <div class="footer">
             Запись по телефону или в мессенджерах
         </div>
