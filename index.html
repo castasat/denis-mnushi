@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #F5F0E8;
+            background-color: #F5F0E8; /* бежевый фон */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -33,6 +33,7 @@
             border: 1px solid #e5ddd0;
         }
 
+        /* ===== РАЗДЕЛИТЕЛИ ===== */
         .divider {
             width: 60px;
             height: 3px;
@@ -41,10 +42,20 @@
             border-radius: 4px;
         }
 
+        .divider-wide {
+            width: 100%;
+            height: 2px;
+            background-color: #1A2F4F;
+            margin: 22px 0 20px;
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+
+        /* ===== ИМЯ ===== */
         .name {
             font-size: 28px;
             font-weight: 700;
-            color: #4A5D3C;
+            color: #4A5D3C; /* оливковый */
             letter-spacing: 1.5px;
             line-height: 1.2;
         }
@@ -55,6 +66,7 @@
             color: #6B7F5A;
         }
 
+        /* ===== ПОДЗАГОЛОВОК ===== */
         .title {
             font-size: 16px;
             font-weight: 500;
@@ -67,16 +79,18 @@
             font-weight: 700;
         }
 
+        /* ===== СЛОГАН ===== */
         .slogan {
             font-size: 15px;
             font-weight: 400;
-            color: #1A2F4F;
+            color: #1A2F4F; /* глубокий синий */
             font-style: italic;
             margin-top: 16px;
             line-height: 1.5;
             padding: 0 10px;
         }
 
+        /* ===== АДРЕС ===== */
         .address {
             font-size: 15px;
             color: #4A5D3C;
@@ -94,15 +108,7 @@
             color: #7A8A6A;
         }
 
-        .divider-wide {
-            width: 100%;
-            height: 2px;
-            background-color: #1A2F4F;
-            margin: 22px 0 20px;
-            border-radius: 4px;
-            opacity: 0.5;
-        }
-
+        /* ===== КНОПКИ ===== */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -145,9 +151,7 @@
             display: block;
         }
 
-        /* ===== КНОПКИ ===== */
-
-        /* TELEGRAM — тёмно-синий фон, белая иконка */
+        /* ===== TELEGRAM ===== */
         .btn-telegram {
             background-color: #1A2F4F;
             color: #ffffff;
@@ -160,7 +164,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* WHATSAPP — оливковый фон, белая иконка */
+        /* ===== WHATSAPP ===== */
         .btn-whatsapp {
             background-color: #4A5D3C;
             color: #ffffff;
@@ -173,7 +177,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* INSTAGRAM — белый фон, тёмно-синяя иконка */
+        /* ===== INSTAGRAM ===== */
         .btn-instagram {
             background-color: #ffffff;
             color: #1A2F4F;
@@ -186,7 +190,7 @@
             filter: brightness(0);
         }
 
-        /* PHONE — прозрачный фон, оливковый текст, эмодзи */
+        /* ===== PHONE ===== */
         .btn-phone {
             background-color: transparent;
             color: #4A5D3C;
@@ -198,11 +202,14 @@
         .btn-phone .btn-icon {
             font-size: 22px;
             line-height: 1;
+            width: auto;
+            height: auto;
         }
 
+        /* ===== ПОДВАЛ ===== */
         .footer {
             margin-top: 24px;
-            font-size: 12px;
+            font-size: 14px;
             color: #9A8A7A;
             letter-spacing: 0.5px;
         }
@@ -213,6 +220,7 @@
             font-weight: 500;
         }
 
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 480px) {
             .card {
                 padding: 30px 20px 25px;
@@ -235,27 +243,34 @@
 
     <div class="card">
 
+        <!-- ИМЯ -->
         <div class="name">
-            DENIS<br /><span>DMITRIENKO</span>
+            DENIS DMITRIENKO
         </div>
 
+        <!-- ПОДЗАГОЛОВОК -->
         <div class="title">
             Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong>
         </div>
 
-        <div class="divider"></div>
+        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
+        <div class="divider-wide"></div>
 
+        <!-- СЛОГАН -->
         <div class="slogan">
             «Тишина и покой для вашей нервной системы»
         </div>
 
+        <!-- АДРЕС -->
         <div class="address">
-            <span class="salon">📍 Shine Beauty Salon</span><br />
-            Herceg Novi <span class="note">(бывший Relax)</span>
+            <span class="salon">📍 Shine Beauty Salon (бывший Relax)</span><br />
+            Herceg Novi, ul. Njegoseva, br. 168
         </div>
 
+        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
         <div class="divider-wide"></div>
 
+        <!-- КНОПКИ СВЯЗИ -->
         <div class="buttons">
 
             <!-- TELEGRAM -->
@@ -275,14 +290,14 @@
             </a>
 
             <!-- INSTAGRAM -->
-            <a href="https://instagram.com/denis_massage_hn" target="_blank" class="btn btn-instagram">
+            <a href="https://www.instagram.com/massage_denis_hn/" target="_blank" class="btn btn-instagram">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg" alt="Instagram" />
                 </span>
                 Смотреть Instagram
             </a>
 
-            <!-- PHONE -->
+            <!-- ПОЗВОНИТЬ -->
             <a href="tel:+38268387810" class="btn btn-phone">
                 <span class="btn-icon">📞</span>
                 Позвонить: +382 68 387 810
@@ -290,6 +305,7 @@
 
         </div>
 
+        <!-- ПОДВАЛ -->
         <div class="footer">
             Запись по телефону или в мессенджерах
         </div>
