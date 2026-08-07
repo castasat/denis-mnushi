@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Денис Дмитриенко — Мастер нейрорелаксации MNUSHI</title>
+    <style>
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F5F0E8; /* бежевый фон */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #F5F0E8;
+            max-width: 420px;
+            width: 100%;
+            padding: 40px 30px 35px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border: 1px solid #e5ddd0;
+        }
+
+        /* ===== ДЕКОРАТИВНАЯ ЛИНИЯ (глубокий синий) ===== */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #1A2F4F; /* глубокий синий */
+            margin: 18px auto 20px;
+            border-radius: 4px;
+        }
+
+        /* ===== ИМЯ ===== */
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4A5D3C; /* оливковый */
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+        }
+
+        .name span {
+            font-weight: 300;
+            font-size: 20px;
+            color: #6B7F5A;
+        }
+
+        /* ===== ПОДЗАГОЛОВОК ===== */
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #4A5D3C;
+            margin-top: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .title strong {
+            font-weight: 700;
+        }
+
+        /* ===== СЛОГАН ===== */
+        .slogan {
+            font-size: 15px;
+            font-weight: 400;
+            color: #1A2F4F; /* глубокий синий */
+            font-style: italic;
+            margin-top: 16px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* ===== АДРЕС ===== */
+        .address {
+            font-size: 15px;
+            color: #4A5D3C;
+            margin-top: 18px;
+            line-height: 1.6;
+        }
+
+        .address .salon {
+            font-weight: 600;
+            color: #1A2F4F;
+        }
+
+        .address .note {
+            font-size: 13px;
+            color: #7A8A6A;
+        }
+
+        /* ===== РАЗДЕЛИТЕЛЬ СИНИЙ (широкий) ===== */
+        .divider-wide {
+            width: 100%;
+            height: 2px;
+            background-color: #1A2F4F;
+            margin: 22px 0 20px;
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+
+        /* ===== КНОПКИ ===== */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1.5px solid transparent;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Кнопка TELEGRAM */
+        .btn-telegram {
+            background-color: #1A2F4F; /* глубокий синий */
+            color: #ffffff;
+            border-color: #1A2F4F;
+        }
+        .btn-telegram:hover {
+            background-color: #0F1F33;
+        }
+
+        /* Кнопка WHATSAPP */
+        .btn-whatsapp {
+            background-color: #4A5D3C; /* оливковый */
+            color: #ffffff;
+            border-color: #4A5D3C;
+        }
+        .btn-whatsapp:hover {
+            background-color: #3A4D2E;
+        }
+
+        /* Кнопка INSTAGRAM */
+        .btn-instagram {
+            background-color: #ffffff;
+            color: #1A2F4F;
+            border-color: #1A2F4F;
+        }
+        .btn-instagram:hover {
+            background-color: #f0ebe3;
+        }
+
+        /* Кнопка PHONE (звонок) */
+        .btn-phone {
+            background-color: transparent;
+            color: #4A5D3C;
+            border-color: #c5b9a8;
+        }
+        .btn-phone:hover {
+            background-color: #efe8dd;
+        }
+
+        /* иконки внутри кнопок */
+        .btn-icon {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: #9A8A7A;
+            letter-spacing: 0.5px;
+        }
+
+        .footer a {
+            color: #1A2F4F;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px 25px;
+            }
+            .name {
+                font-size: 24px;
+            }
+            .btn {
+                font-size: 15px;
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- ИМЯ -->
+        <div class="name">
+            DENIS<br /><span>DMITRIENKO</span>
+        </div>
+
+        <!-- ПОДЗАГОЛОВОК -->
+        <div class="title">
+            Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong>
+        </div>
+
+        <!-- ДЕКОРАТИВНАЯ ЛИНИЯ -->
+        <div class="divider"></div>
+
+        <!-- СЛОГАН -->
+        <div class="slogan">
+            «Тишина и покой для вашей нервной системы»
+        </div>
+
+        <!-- АДРЕС -->
+        <div class="address">
+            <span class="salon">📍 Shine Beauty Salon</span><br />
+            <span class="note">(бывший Relax)</span>
+            Herceg Novi, ul. Njegoseva, br. 168<br />
+        </div>
+
+        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
+        <div class="divider-wide"></div>
+
+        <!-- КНОПКИ СВЯЗИ -->
+        <div class="buttons">
+
+            <!-- TELEGRAM -->
+            <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
+                <span class="btn-icon">✈️</span> Написать в Telegram
+            </a>
+
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/38268387810" target="_blank" class="btn btn-whatsapp">
+                <span class="btn-icon">💬</span> Написать в WhatsApp
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://instagram.com/denis_massage_hn" target="_blank" class="btn btn-instagram">
+                <span class="btn-icon">📷</span> Смотреть Instagram
+            </a>
+
+            <!-- ПОЗВОНИТЬ -->
+            <a href="tel:+38268387810" class="btn btn-phone">
+                <span class="btn-icon">📞</span> Позвонить: +382 68 387 810
+            </a>
+
+        </div>
+
+        <!-- ПОДВАЛ -->
+        <div class="footer">
+            Запись по телефону или в мессенджерах
+        </div>
+
+    </div>
+
+</body>
+</html>
