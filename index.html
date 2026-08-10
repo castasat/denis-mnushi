@@ -108,7 +108,7 @@
             color: #7A8A6A;
         }
 
-        /* ===== КНОПКИ (Material Design стиль) ===== */
+        /* ===== КНОПКИ ===== */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -119,8 +119,7 @@
         .btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 14px;
+            justify-content: flex-start; /* Текст и иконка прижаты к левому краю */
             padding: 14px 24px;
             border-radius: 60px;
             text-decoration: none;
@@ -175,7 +174,6 @@
         .btn-whatsapp:hover {
             background-color: rgba(37, 211, 102, 0.08);
         }
-        /* Убираем фильтр, чтобы иконка оставалась оригинального зелёного цвета */
         .btn-whatsapp .btn-icon img {
             filter: none;
         }
@@ -232,7 +230,7 @@
             filter: brightness(0) saturate(100%) invert(42%) sepia(80%) saturate(2000%) hue-rotate(340deg) brightness(90%) contrast(90%);
         }
 
-        /* ===== PHONE ===== */
+        /* ===== PHONE (самая нижняя) ===== */
         .btn-phone {
             background-color: transparent;
             color: #4A5D3C;
@@ -273,7 +271,6 @@
             .btn {
                 font-size: 15px;
                 padding: 12px 20px;
-                gap: 12px;
             }
             .btn-icon {
                 width: 22px;
@@ -316,26 +313,20 @@
         <!-- КНОПКИ СВЯЗИ -->
         <div class="buttons">
 
-            <!-- ПОЗВОНИТЬ -->
-            <a href="tel:+38268387810" class="btn btn-phone">
-                <span class="btn-icon">📞</span>
-                Позвонить: +382 68 387 810
-            </a>
-
             <!-- TELEGRAM -->
             <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/telegram.svg" alt="Telegram" />
                 </span>
-                Написать в Telegram
+                <span>&#9;</span>Написать в Telegram
             </a>
 
-            <!-- WHATSAPP (теперь прозрачный фон, зелёный контур и зелёная иконка) -->
+            <!-- WHATSAPP -->
             <a href="https://wa.me/38268387810" target="_blank" class="btn btn-whatsapp">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="WhatsApp" />
                 </span>
-                Написать в WhatsApp
+                <span>&#9;</span>Написать в WhatsApp
             </a>
 
             <!-- VIBER -->
@@ -343,7 +334,7 @@
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/viber.svg" alt="Viber" />
                 </span>
-                Написать в Viber
+                <span>&#9;</span>Написать в Viber
             </a>
 
             <!-- INSTAGRAM -->
@@ -351,7 +342,7 @@
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg" alt="Instagram" />
                 </span>
-                Смотреть Instagram
+                <span>&#9;</span>Смотреть Instagram
             </a>
 
             <!-- THREADS -->
@@ -359,7 +350,7 @@
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/threads.svg" alt="Threads" />
                 </span>
-                Смотреть Threads
+                <span>&#9;</span>Смотреть Threads
             </a>
 
             <!-- EMAIL -->
@@ -367,7 +358,13 @@
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg" alt="Email" />
                 </span>
-                Написать на почту: castasat@gmail.com
+                <span>&#9;</span>Написать на почту: castasat@gmail.com
+            </a>
+
+            <!-- ПОЗВОНИТЬ (теперь в самом низу) -->
+            <a href="tel:+38268387810" class="btn btn-phone">
+                <span class="btn-icon">📞</span>
+                <span>&#9;</span>Позвонить: +382 68 387 810
             </a>
 
         </div>
