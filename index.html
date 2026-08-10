@@ -31,6 +31,7 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: 1px solid #e5ddd0;
+            margin-top: 70px; /* ДОБАВЛЕНО: отступ сверху, чтобы кнопки не прилипали к имени */
         }
 
         /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (вынесен за пределы карточки) ===== */
@@ -337,6 +338,7 @@
         @media (max-width: 480px) {
             .card {
                 padding: 30px 20px 25px;
+                margin-top: 60px; /* На мобильных чуть уменьшаем отступ */
             }
             .name {
                 font-size: 24px;
@@ -370,7 +372,7 @@
 </head>
 <body>
 
-    <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (теперь ВНЕ карточки, всегда виден) -->
+    <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (всегда виден) -->
     <div class="lang-switcher">
         <button class="lang-btn active" data-lang="ru">
             <span class="lang-flag">
@@ -391,10 +393,7 @@
             EN
         </button>
     </div>
-    &nbsp;<br />
-    <div />
-    &nbsp;<br />
-    <div />    
+
     <div class="card">
 
         <!-- ИМЯ -->
