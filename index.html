@@ -31,10 +31,10 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: 1px solid #e5ddd0;
-            margin-top: 70px; /* ДОБАВЛЕНО: отступ сверху, чтобы кнопки не прилипали к имени */
+            margin-top: 70px; /* Отступ сверху, чтобы кнопки не прилипали к имени */
         }
 
-        /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (вынесен за пределы карточки) ===== */
+        /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ===== */
         .lang-switcher {
             position: fixed; /* Жестко фиксируем в углу экрана */
             top: 20px;
@@ -43,7 +43,7 @@
             gap: 10px;
             font-size: 14px;
             font-weight: 600;
-            z-index: 9999; /* Максимальный приоритет, ничего не перекроет */
+            z-index: 9999; /* Максимальный приоритет */
             background: transparent;
         }
 
@@ -338,7 +338,7 @@
         @media (max-width: 480px) {
             .card {
                 padding: 30px 20px 25px;
-                margin-top: 60px; /* На мобильных чуть уменьшаем отступ */
+                margin-top: 60px;
             }
             .name {
                 font-size: 24px;
@@ -372,23 +372,26 @@
 </head>
 <body>
 
-    <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (всегда виден) -->
+    <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
     <div class="lang-switcher">
         <button class="lang-btn active" data-lang="ru">
             <span class="lang-flag">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flags/ru.svg" alt="RU" />
+                <!-- Прямая ссылка на флаг России с CDN flagcdn -->
+                <img src="https://flagcdn.com/w40/ru.png" alt="RU" />
             </span>
             RU
         </button>
         <button class="lang-btn" data-lang="mne">
             <span class="lang-flag">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flags/me.svg" alt="MNE" />
+                <!-- Прямая ссылка на флаг Черногории с CDN flagcdn -->
+                <img src="https://flagcdn.com/w40/me.png" alt="MNE" />
             </span>
             MNE
         </button>
         <button class="lang-btn" data-lang="en">
             <span class="lang-flag">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flags/gb.svg" alt="EN" />
+                <!-- Прямая ссылка на флаг Великобритании с CDN flagcdn -->
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN" />
             </span>
             EN
         </button>
