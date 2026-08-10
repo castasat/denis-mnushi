@@ -151,14 +151,14 @@
             display: block;
         }
 
-        /* ===== TELEGRAM ===== */
+        /* ===== TELEGRAM (светло-голубой, брендовый) ===== */
         .btn-telegram {
-            background-color: #1A2F4F;
+            background-color: #0088cc;
             color: #ffffff;
-            border-color: #1A2F4F;
+            border-color: #0088cc;
         }
         .btn-telegram:hover {
-            background-color: #0F1F33;
+            background-color: #0077b3;
         }
         .btn-telegram .btn-icon img {
             filter: brightness(0) invert(1);
@@ -177,6 +177,19 @@
             filter: brightness(0) invert(1);
         }
 
+        /* ===== VIBER (фиолетовый) ===== */
+        .btn-viber {
+            background-color: #7360f2;
+            color: #ffffff;
+            border-color: #7360f2;
+        }
+        .btn-viber:hover {
+            background-color: #5e4dd1;
+        }
+        .btn-viber .btn-icon img {
+            filter: brightness(0) invert(1);
+        }
+
         /* ===== INSTAGRAM ===== */
         .btn-instagram {
             background-color: #ffffff;
@@ -188,6 +201,35 @@
         }
         .btn-instagram .btn-icon img {
             filter: brightness(0);
+        }
+
+        /* ===== THREADS (черный фон, белый текст) ===== */
+        .btn-threads {
+            background-color: #000000;
+            color: #ffffff;
+            border-color: #000000;
+        }
+        .btn-threads:hover {
+            background-color: #222222;
+        }
+        .btn-threads .btn-icon img {
+            filter: brightness(0) invert(1);
+        }
+
+        /* ===== EMAIL (в стиле Phone) ===== */
+        .btn-email {
+            background-color: transparent;
+            color: #4A5D3C;
+            border-color: #c5b9a8;
+        }
+        .btn-email:hover {
+            background-color: #efe8dd;
+        }
+        .btn-email .btn-icon {
+            font-size: 22px;
+            line-height: 1;
+            width: auto;
+            height: auto;
         }
 
         /* ===== PHONE ===== */
@@ -273,7 +315,13 @@
         <!-- КНОПКИ СВЯЗИ -->
         <div class="buttons">
 
-            <!-- TELEGRAM -->
+            <!-- ПОЗВОНИТЬ -->
+            <a href="tel:+38268387810" class="btn btn-phone">
+                <span class="btn-icon">📞</span>
+                Позвонить: +382 68 387 810
+            </a>
+
+            <!-- TELEGRAM (теперь светло-голубой) -->
             <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/telegram.svg" alt="Telegram" />
@@ -289,6 +337,14 @@
                 Написать в WhatsApp
             </a>
 
+            <!-- VIBER (теперь фиолетовый) -->
+            <a href="viber://contact?number=%2B38268387810" target="_blank" class="btn btn-viber">
+                <span class="btn-icon">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/viber.svg" alt="Viber" />
+                </span>
+                Написать в Viber
+            </a>
+
             <!-- INSTAGRAM -->
             <a href="https://www.instagram.com/massage_denis_hn/" target="_blank" class="btn btn-instagram">
                 <span class="btn-icon">
@@ -297,10 +353,18 @@
                 Смотреть Instagram
             </a>
 
-            <!-- ПОЗВОНИТЬ -->
-            <a href="tel:+38268387810" class="btn btn-phone">
-                <span class="btn-icon">📞</span>
-                Позвонить: +382 68 387 810
+            <!-- THREADS (теперь черный) -->
+            <a href="https://www.threads.net/@massage_denis_hn" target="_blank" class="btn btn-threads">
+                <span class="btn-icon">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/threads.svg" alt="Threads" />
+                </span>
+                Смотреть Threads
+            </a>
+
+            <!-- EMAIL -->
+            <a href="mailto:castasat@gmail.com" class="btn btn-email">
+                <span class="btn-icon">✉️</span>
+                Написать на почту: castasat@gmail.com
             </a>
 
         </div>
