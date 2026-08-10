@@ -48,26 +48,34 @@
 
         .lang-btn {
             background: transparent;
-            border: 1px solid #c5b9a8;
-            color: #9A8A7A;
-            padding: 4px 8px;
+            border: 1px solid #1A2F4F;
+            color: #1A2F4F;
+            padding: 4px 10px;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: inherit;
             font-size: 12px;
             line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .lang-btn:hover {
-            border-color: #4A5D3C;
-            color: #4A5D3C;
+            background-color: rgba(26, 47, 79, 0.08);
+            border-color: #1A2F4F;
         }
 
         .lang-btn.active {
             background-color: #1A2F4F;
             border-color: #1A2F4F;
             color: #ffffff;
+        }
+
+        .lang-flag {
+            font-size: 16px;
+            line-height: 1;
         }
 
         /* ===== РАЗДЕЛИТЕЛИ ===== */
@@ -332,6 +340,9 @@
                 padding: 3px 6px;
                 font-size: 10px;
             }
+            .lang-flag {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -341,9 +352,15 @@
 
         <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
         <div class="lang-switcher">
-            <button class="lang-btn active" data-lang="ru">RU</button>
-            <button class="lang-btn" data-lang="mne">MNE</button>
-            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn active" data-lang="ru">
+                <span class="lang-flag">🇷🇺</span> RU
+            </button>
+            <button class="lang-btn" data-lang="mne">
+                <span class="lang-flag">🇲🇪</span> MNE
+            </button>
+            <button class="lang-btn" data-lang="en">
+                <span class="lang-flag">🇬🇧</span> EN
+            </button>
         </div>
 
         <!-- ИМЯ -->
