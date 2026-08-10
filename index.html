@@ -31,6 +31,43 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: 1px solid #e5ddd0;
+            position: relative; /* Для позиционирования переключателя */
+        }
+
+        /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ===== */
+        .lang-switcher {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            display: flex;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #c5b9a8;
+            color: #9A8A7A;
+            padding: 4px 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .lang-btn:hover {
+            border-color: #4A5D3C;
+            color: #4A5D3C;
+        }
+
+        .lang-btn.active {
+            background-color: #1A2F4F;
+            border-color: #1A2F4F;
+            color: #ffffff;
         }
 
         /* ===== РАЗДЕЛИТЕЛИ ===== */
@@ -166,7 +203,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* ===== WHATSAPP (зеленая иконка) ===== */
+        /* ===== WHATSAPP ===== */
         .btn-whatsapp {
             background-color: transparent;
             color: #25D366;
@@ -176,7 +213,7 @@
             background-color: rgba(37, 211, 102, 0.08);
         }
         .btn-whatsapp .btn-icon img {
-            filter: none; /* Иконка остается оригинального зеленого цвета */
+            filter: none;
         }
 
         /* ===== VIBER ===== */
@@ -192,7 +229,7 @@
             filter: brightness(0) invert(1);
         }
 
-        /* ===== INSTAGRAM (градиентная цветная иконка) ===== */
+        /* ===== INSTAGRAM ===== */
         .btn-instagram {
             background-color: #ffffff;
             color: #1A2F4F;
@@ -201,20 +238,6 @@
         .btn-instagram:hover {
             background-color: #f0ebe3;
         }
-        /* Сложный фильтр, создающий градиент от желтого к розовому и пурпурному */
-        .btn-instagram .btn-icon img {
-            filter: sepia(1) saturate(100) hue-rotate(0deg) brightness(1.1);
-            /* Дополнительно накладываем градиент через маску (работает в современных браузерах) */
-            background: linear-gradient(135deg, #feda75, #d62976, #962fbf, #4f5bd5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        /* Фикс для SVG, чтобы градиент применился */
-        .btn-instagram .btn-icon img {
-            filter: drop-shadow(0 0 0 transparent); 
-        }
-        /* Переопределяем фильтр для иконки Instagram через SVG-атрибут (работает надежнее) */
         .btn-instagram .btn-icon {
             background: linear-gradient(135deg, #feda75 0%, #d62976 50%, #962fbf 100%);
             -webkit-mask: url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg) no-repeat center;
@@ -223,7 +246,7 @@
             mask-size: contain;
         }
         .btn-instagram .btn-icon img {
-            opacity: 0; /* Скрываем оригинальную черную SVG, поверх накладываем градиент через маску */
+            opacity: 0;
         }
 
         /* ===== THREADS ===== */
@@ -299,12 +322,29 @@
                 height: 22px;
                 margin-right: 12px;
             }
+            .lang-switcher {
+                top: 12px;
+                left: 14px;
+                font-size: 10px;
+                gap: 4px;
+            }
+            .lang-btn {
+                padding: 3px 6px;
+                font-size: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
+
+        <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="mne">MNE</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
 
         <!-- ИМЯ -->
         <div class="name">
@@ -313,7 +353,9 @@
 
         <!-- ПОДЗАГОЛОВОК -->
         <div class="title">
-            Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong>
+            <span class="text-ru">Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong></span>
+            <span class="text-mne" style="display:none;">Majstor <strong>C-taktilne</strong> neurorelaksacije <strong>MNUSHI</strong></span>
+            <span class="text-en" style="display:none;">Master of <strong>C-tactile</strong> neurorelaxation <strong>MNUSHI</strong></span>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
@@ -321,13 +363,17 @@
 
         <!-- СЛОГАН -->
         <div class="slogan">
-            «Тишина и покой для вашей нервной системы»
+            <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
+            <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
+            <span class="text-en" style="display:none;">«Peace and tranquility for your nervous system»</span>
         </div>
 
         <!-- АДРЕС -->
         <div class="address">
-            <span class="salon">📍 Shine Beauty Salon (бывший Relax)</span><br />
-            Herceg Novi, ul. Njegoseva, br. 168
+            <span class="salon">📍 Shine Beauty Salon</span><br />
+            <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 (бывший Relax)</span>
+            <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (bivši Relax)</span>
+            <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (former Relax)</span>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
@@ -344,7 +390,7 @@
                 Telegram
             </a>
 
-            <!-- WHATSAPP (зеленая иконка) -->
+            <!-- WHATSAPP -->
             <a href="https://wa.me/38268387810" target="_blank" class="btn btn-whatsapp">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="WhatsApp" />
@@ -360,7 +406,7 @@
                 Viber
             </a>
 
-            <!-- INSTAGRAM (градиентная иконка) -->
+            <!-- INSTAGRAM -->
             <a href="https://www.instagram.com/massage_denis_hn/" target="_blank" class="btn btn-instagram">
                 <span class="btn-icon">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg" alt="Instagram" />
@@ -392,7 +438,63 @@
 
         </div>
 
+        <!-- ПОДВАЛ -->
+        <div class="footer">
+            <span class="text-ru">Запись по телефону или в мессенджерах</span>
+            <span class="text-mne" style="display:none;">Zakazivanje putem telefona ili poruka</span>
+            <span class="text-en" style="display:none;">Book by phone or via messengers</span>
+        </div>
+
     </div>
+
+    <script>
+        // ===== ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const langElements = document.querySelectorAll('[class*="text-"]');
+
+            // Функция переключения языка
+            function setLanguage(lang) {
+                // Скрываем все тексты
+                langElements.forEach(el => {
+                    el.style.display = 'none';
+                });
+
+                // Показываем тексты для выбранного языка
+                const selectedElements = document.querySelectorAll('.text-' + lang);
+                selectedElements.forEach(el => {
+                    el.style.display = '';
+                });
+
+                // Обновляем активный класс на кнопках
+                langBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active');
+                    }
+                });
+
+                // Сохраняем выбор в localStorage
+                localStorage.setItem('preferredLang', lang);
+            }
+
+            // Слушаем клики по кнопкам
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    setLanguage(lang);
+                });
+            });
+
+            // При загрузке проверяем сохраненный язык или используем RU по умолчанию
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && ['ru', 'mne', 'en'].includes(savedLang)) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru'); // По умолчанию русский
+            }
+        });
+    </script>
 
 </body>
 </html>
