@@ -376,24 +376,27 @@
     <div class="lang-switcher">
         <button class="lang-btn active" data-lang="ru">
             <span class="lang-flag">
-                <!-- Прямая ссылка на флаг России с CDN flagcdn -->
                 <img src="https://flagcdn.com/w40/ru.png" alt="RU" />
             </span>
             RU
         </button>
         <button class="lang-btn" data-lang="mne">
             <span class="lang-flag">
-                <!-- Прямая ссылка на флаг Черногории с CDN flagcdn -->
                 <img src="https://flagcdn.com/w40/me.png" alt="MNE" />
             </span>
             MNE
         </button>
         <button class="lang-btn" data-lang="en">
             <span class="lang-flag">
-                <!-- Прямая ссылка на флаг Великобритании с CDN flagcdn -->
                 <img src="https://flagcdn.com/w40/gb.png" alt="EN" />
             </span>
             EN
+        </button>
+        <button class="lang-btn" data-lang="ua">
+            <span class="lang-flag">
+                <img src="https://flagcdn.com/w40/ua.png" alt="UA" />
+            </span>
+            UA
         </button>
     </div>
 
@@ -406,9 +409,10 @@
 
         <!-- ПОДЗАГОЛОВОК -->
         <div class="title">
-            <span class="text-ru">Мастер <strong>С-тактильной</strong> нейрорелаксации <strong>MNUSHI</strong></span>
-            <span class="text-mne" style="display:none;">Majstor <strong>C-taktilne</strong> neurorelaksacije <strong>MNUSHI</strong></span>
-            <span class="text-en" style="display:none;">Master of <strong>C-tactile</strong> neurorelaxation <strong>MNUSHI</strong></span>
+            <span class="text-ru">Мастер <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
+            <span class="text-mne" style="display:none;">Majstor <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
+            <span class="text-en" style="display:none;">Master of <strong>C-tactile</strong><br /> neurorelaxation <strong>MNUSHI</strong></span>
+            <span class="text-ua" style="display:none;">Майстер <strong>С-тактильної</strong><br /> нейрорелаксації <strong>MNUSHI</strong></span>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
@@ -419,14 +423,16 @@
             <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
             <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
             <span class="text-en" style="display:none;">«Peace and tranquility for your nervous system»</span>
+            <span class="text-ua" style="display:none;">«Тиша та спокій для вашої нервової системи»</span>
         </div>
 
         <!-- АДРЕС -->
         <div class="address">
             <span class="salon">📍 Shine Beauty Salon</span><br />
-            <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 (бывший Relax)</span>
-            <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (bivši Relax)</span>
-            <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (former Relax)</span>
+            <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 <br />(бывший Relax)</span>
+            <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(bivši Relax)</span>
+            <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(former Relax)</span>
+            <span class="text-ua" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(колишній Relax)</span>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
@@ -496,6 +502,7 @@
             <span class="text-ru">Запись по телефону или в мессенджерах</span>
             <span class="text-mne" style="display:none;">Zakazivanje putem telefona ili poruka</span>
             <span class="text-en" style="display:none;">Book by phone or via messengers</span>
+            <span class="text-ua" style="display:none;">Запис за телефоном або в месенджерах</span>
         </div>
 
     </div>
@@ -541,7 +548,7 @@
 
             // При загрузке проверяем сохраненный язык или используем RU по умолчанию
             const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang && ['ru', 'mne', 'en'].includes(savedLang)) {
+            if (savedLang && ['ru', 'mne', 'en', 'ua'].includes(savedLang)) {
                 setLanguage(savedLang);
             } else {
                 setLanguage('ru'); // По умолчанию русский
