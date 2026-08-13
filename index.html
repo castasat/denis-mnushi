@@ -180,7 +180,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* ===== АДРЕС ===== */
+        /* ===== АДРЕС (ТОЛЬКО ВНИЗУ) ===== */
         .address {
             font-size: 15px;
             color: #4A5D3C;
@@ -233,20 +233,16 @@
             color: #1A2F4F;
         }
 
-        .mnushi-block .mnushi-list {
-            padding-left: 18px;
-            margin: 4px 0 10px 0;
-        }
-
-        .mnushi-block .mnushi-list li {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #2A3F4F;
-            margin-bottom: 4px;
-        }
-
-        .mnushi-block .mnushi-list li:last-child {
-            margin-bottom: 0;
+        /* ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" — КРУПНЫЙ И ЯРКИЙ ===== */
+        .booking-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1A2F4F;
+            letter-spacing: 2px;
+            margin: 6px 0 16px 0;
+            text-transform: uppercase;
+            padding: 8px 0;
+            border-bottom: 3px solid rgba(26, 47, 79, 0.15);
         }
 
         /* ===== КНОПКИ ===== */
@@ -395,20 +391,7 @@
             height: auto;
         }
 
-        /* ===== ПОДВАЛ ===== */
-        .footer {
-            margin-top: 24px;
-            font-size: 14px;
-            color: #9A8A7A;
-            letter-spacing: 0.5px;
-        }
-
-        .footer a {
-            color: #1A2F4F;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
+        /* ===== ПОДВАЛ (удален, адрес перенесен в конец) ===== */
         /* ===== АДАПТИВ ===== */
         @media (max-width: 480px) {
             .card {
@@ -421,6 +404,9 @@
             .slogan {
                 font-size: 20px;
                 font-style: italic;
+            }
+            .booking-title {
+                font-size: 22px;
             }
             .btn {
                 font-size: 15px;
@@ -457,8 +443,7 @@
             .mnushi-block .mnushi-title {
                 font-size: 18px;
             }
-            .mnushi-block p,
-            .mnushi-block .mnushi-list li {
+            .mnushi-block p {
                 font-size: 14px;
             }
         }
@@ -503,10 +488,7 @@
 
     <div class="card">
 
-        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
-        <div class="divider-wide"></div>
-        
-        <!-- PHOTO -->
+        <!-- ФОТО -->
         <div class="photo">
             <img src="photo_denis.jpg" alt="Денис Дмитриенко">
         </div>
@@ -516,7 +498,7 @@
             DENIS DMITRIENKO
         </div>
 
-        <!-- ПОДЗАГОЛОВОК (обновленный текст) -->
+        <!-- ПОДЗАГОЛОВОК -->
         <div class="title">
             <span class="text-ru">Мастер массажной <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
             <span class="text-mne" style="display:none;">Majstor masažne <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
@@ -527,7 +509,7 @@
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
         <div class="divider-wide"></div>
 
-        <!-- СЛОГАН — КРУПНЫЙ И ЖИРНЫЙ -->
+        <!-- СЛОГАН -->
         <div class="slogan">
             <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
             <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
@@ -579,16 +561,17 @@
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
         <div class="divider-wide"></div>
         
+        <!-- ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" ===== -->
+        <div class="booking-title">
+            <span class="text-ru">ЗАПИСАТЬСЯ</span>
+            <span class="text-mne" style="display:none;">ZAKAŽITE</span>
+            <span class="text-en" style="display:none;">BOOK NOW</span>
+            <span class="text-ua" style="display:none;">ЗАПИСАТИСЯ</span>
+        </div>
+        
         <!-- КНОПКИ СВЯЗИ -->
         <div class="buttons">
 
-            <div class="mnushi-title">
-                <span class="text-ru">ЗАПИСАТЬСЯ</span>
-                <span class="text-mne" style="display:none;">ZAKAŽITE</span>
-                <span class="text-en" style="display:none;">BOOK NOW</span>
-                <span class="text-ua" style="display:none;">ЗАПИСАТИСЯ</span>
-            </div>
-            
             <!-- TELEGRAM -->
             <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
                 <span class="btn-icon">
@@ -645,9 +628,9 @@
 
         </div>
 
-        <!-- АДРЕС -->
+        <!-- ===== АДРЕС (ТОЛЬКО ВНИЗУ) ===== -->
         <div class="address">
-            <span class="salon">📍 Shine (ex-Relax) Beauty Salon</span><br />
+            <span class="salon">📍 Shine Beauty Salon</span><br />
             <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 <br />(бывший Relax)</span>
             <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(bivši Relax)</span>
             <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(former Relax)</span>
