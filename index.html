@@ -31,19 +31,40 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: 1px solid #e5ddd0;
-            margin-top: 70px; /* Отступ сверху, чтобы кнопки не прилипали к имени */
+            margin-top: 70px;
+        }
+
+        /* ===== ФОТО — РОВНО 50% ВЫСОТЫ ЭКРАНА, БЕЗ ОБРЕЗКИ ===== */
+        .photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+            height: 50vh;           /* Ровно половина высоты экрана */
+            width: 100%;
+        }
+
+        .photo img {
+            height: 100%;           /* Растягиваем по высоте контейнера */
+            width: auto;            /* Ширина подстраивается пропорционально */
+            max-width: 100%;        /* Если фото шире контейнера — уменьшаем по ширине */
+            max-height: 100%;       /* Если фото выше контейнера — уменьшаем по высоте */
+            object-fit: contain;    /* 👈 ВАЖНО: сохраняем пропорции, не обрезаем */
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: block;
         }
 
         /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ===== */
         .lang-switcher {
-            position: fixed; /* Жестко фиксируем в углу экрана */
+            position: fixed;
             top: 20px;
             left: 20px;
             display: flex;
             gap: 10px;
             font-size: 14px;
             font-weight: 600;
-            z-index: 9999; /* Максимальный приоритет */
+            z-index: 9999;
             background: transparent;
         }
 
@@ -367,6 +388,19 @@
                 width: 16px;
                 height: 16px;
             }
+
+            /* На маленьких экранах чуть уменьшаем, чтобы не съедало весь контент */
+            .photo {
+                height: 40vh;
+            }
+        }
+
+        /* На очень больших экранах ограничиваем максимальную высоту */
+        @media (min-height: 900px) {
+            .photo {
+                height: 50vh;
+                max-height: 500px;
+            }
         }
     </style>
 </head>
@@ -404,7 +438,7 @@
 
         <!-- PHOTO -->
         <div class="photo">
-            <img src="photo_denis.jpg">
+            <img src="photo_denis.jpg" alt="Денис Дмитриенко">
         </div>
         
         <!-- ИМЯ -->
@@ -518,20 +552,16 @@
             const langBtns = document.querySelectorAll('.lang-btn');
             const langElements = document.querySelectorAll('[class*="text-"]');
 
-            // Функция переключения языка
             function setLanguage(lang) {
-                // Скрываем все тексты
                 langElements.forEach(el => {
                     el.style.display = 'none';
                 });
 
-                // Показываем тексты для выбранного языка
                 const selectedElements = document.querySelectorAll('.text-' + lang);
                 selectedElements.forEach(el => {
                     el.style.display = '';
                 });
 
-                // Обновляем активный класс на кнопках
                 langBtns.forEach(btn => {
                     btn.classList.remove('active');
                     if (btn.dataset.lang === lang) {
@@ -539,11 +569,9 @@
                     }
                 });
 
-                // Сохраняем выбор в localStorage
                 localStorage.setItem('preferredLang', lang);
             }
 
-            // Слушаем клики по кнопкам
             langBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const lang = this.dataset.lang;
@@ -551,12 +579,11 @@
                 });
             });
 
-            // При загрузке проверяем сохраненный язык или используем RU по умолчанию
             const savedLang = localStorage.getItem('preferredLang');
             if (savedLang && ['ru', 'mne', 'en', 'ua'].includes(savedLang)) {
                 setLanguage(savedLang);
             } else {
-                setLanguage('ru'); // По умолчанию русский
+                setLanguage('ru');
             }
         });
     </script>
