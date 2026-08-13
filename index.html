@@ -40,16 +40,16 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 16px;
-            height: 50vh;           /* Ровно половина высоты экрана */
+            height: 50vh;
             width: 100%;
         }
 
         .photo img {
-            height: 100%;           /* Растягиваем по высоте контейнера */
-            width: auto;            /* Ширина подстраивается пропорционально */
-            max-width: 100%;        /* Если фото шире контейнера — уменьшаем по ширине */
-            max-height: 100%;       /* Если фото выше контейнера — уменьшаем по высоте */
-            object-fit: contain;    /* ВАЖНО: сохраняем пропорции, не обрезаем */
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
             display: block;
@@ -145,6 +145,7 @@
             color: #4A5D3C;
             letter-spacing: 1.5px;
             line-height: 1.2;
+            margin-bottom: 4px;
         }
 
         .name span {
@@ -160,21 +161,22 @@
             color: #4A5D3C;
             margin-top: 6px;
             letter-spacing: 0.3px;
+            line-height: 1.4;
         }
 
         .title strong {
             font-weight: 700;
         }
 
-        /* ===== СЛОГАН ===== */
+        /* ===== СЛОГАН — КРУПНЫЙ И ЖИРНЫЙ ===== */
         .slogan {
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 26px;
+            font-weight: 700;
             color: #1A2F4F;
-            font-style: italic;
             margin-top: 16px;
-            line-height: 1.5;
-            padding: 0 10px;
+            line-height: 1.3;
+            padding: 0 5px;
+            letter-spacing: 0.5px;
         }
 
         /* ===== АДРЕС ===== */
@@ -193,6 +195,57 @@
         .address .note {
             font-size: 13px;
             color: #7A8A6A;
+        }
+
+        /* ===== БЛОК MNUSHI ===== */
+        .mnushi-block {
+            margin-top: 24px;
+            padding: 20px 18px;
+            background-color: rgba(26, 47, 79, 0.04);
+            border-radius: 16px;
+            border: 1px solid rgba(26, 47, 79, 0.10);
+            text-align: left;
+        }
+
+        .mnushi-block .mnushi-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1A2F4F;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .mnushi-block p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2A3F4F;
+            margin-bottom: 10px;
+        }
+
+        .mnushi-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mnushi-block .mnushi-label {
+            font-weight: 600;
+            color: #1A2F4F;
+        }
+
+        .mnushi-block .mnushi-list {
+            padding-left: 18px;
+            margin: 4px 0 10px 0;
+        }
+
+        .mnushi-block .mnushi-list li {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2A3F4F;
+            margin-bottom: 4px;
+        }
+
+        .mnushi-block .mnushi-list li:last-child {
+            margin-bottom: 0;
         }
 
         /* ===== КНОПКИ ===== */
@@ -364,6 +417,9 @@
             .name {
                 font-size: 24px;
             }
+            .slogan {
+                font-size: 20px;
+            }
             .btn {
                 font-size: 15px;
                 padding: 12px 20px;
@@ -389,13 +445,22 @@
                 height: 16px;
             }
 
-            /* На маленьких экранах чуть уменьшаем, чтобы не съедало весь контент */
             .photo {
                 height: 40vh;
             }
+
+            .mnushi-block {
+                padding: 16px 14px;
+            }
+            .mnushi-block .mnushi-title {
+                font-size: 18px;
+            }
+            .mnushi-block p,
+            .mnushi-block .mnushi-list li {
+                font-size: 14px;
+            }
         }
 
-        /* На очень больших экранах ограничиваем максимальную высоту */
         @media (min-height: 900px) {
             .photo {
                 height: 50vh;
@@ -408,11 +473,11 @@
 
     <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
     <div class="lang-switcher">
-        <button class="lang-btn" data-lang="en">
+        <button class="lang-btn active" data-lang="ru">
             <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/gb.png" alt="EN" />
+                <img src="https://flagcdn.com/w40/ru.png" alt="RU" />
             </span>
-            EN
+            RU
         </button>
         <button class="lang-btn" data-lang="mne">
             <span class="lang-flag">
@@ -420,11 +485,11 @@
             </span>
             MNE
         </button>
-        <button class="lang-btn active" data-lang="ru">
+        <button class="lang-btn" data-lang="en">
             <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/ru.png" alt="RU" />
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN" />
             </span>
-            RU
+            EN
         </button>
         <button class="lang-btn" data-lang="ua">
             <span class="lang-flag">
@@ -446,18 +511,18 @@
             DENIS DMITRIENKO
         </div>
 
-        <!-- ПОДЗАГОЛОВОК -->
+        <!-- ПОДЗАГОЛОВОК (обновленный текст) -->
         <div class="title">
-            <span class="text-ru">Мастер <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
-            <span class="text-mne" style="display:none;">Majstor <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
-            <span class="text-en" style="display:none;">Master of <strong>C-tactile</strong><br /> neurorelaxation <strong>MNUSHI</strong></span>
-            <span class="text-ua" style="display:none;">Майстер <strong>С-тактильної</strong><br /> нейрорелаксації <strong>MNUSHI</strong></span>
+            <span class="text-ru">Мастер массажной <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
+            <span class="text-mne" style="display:none;">Majstor masažne <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
+            <span class="text-en" style="display:none;">Master of massage <strong>C-tactile</strong><br /> neurorelaxation <strong>MNUSHI</strong></span>
+            <span class="text-ua" style="display:none;">Майстер масажної <strong>С-тактильної</strong><br /> нейрорелаксації <strong>MNUSHI</strong></span>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
         <div class="divider-wide"></div>
 
-        <!-- СЛОГАН -->
+        <!-- СЛОГАН — КРУПНЫЙ И ЖИРНЫЙ -->
         <div class="slogan">
             <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
             <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
@@ -472,6 +537,47 @@
             <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(bivši Relax)</span>
             <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(former Relax)</span>
             <span class="text-ua" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(колишній Relax)</span>
+        </div>
+
+        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
+        <div class="divider-wide"></div>
+
+        <!-- ===== БЛОК MNUSHI ===== -->
+        <div class="mnushi-block">
+            <div class="mnushi-title">
+                <span class="text-ru">Что такое MNUSHI?</span>
+                <span class="text-mne" style="display:none;">Šta je MNUSHI?</span>
+                <span class="text-en" style="display:none;">What is MNUSHI?</span>
+                <span class="text-ua" style="display:none;">Що таке MNUSHI?</span>
+            </div>
+
+            <!-- RUSSIAN -->
+            <div class="text-ru">
+                <p><strong>MNUSHI</strong> — это мягкая С-тактильная нейрорелаксация (Meditative Neurorelaxation Unique Somatic Healing Interaction). Это не лечебный массаж — это глубокая расслабляющая практика для вашей нервной системы.</p>
+                <p><span class="mnushi-label">Для кого?</span> Для всех, кто чувствует стресс, усталость или просто хочет восстановить внутренний баланс. Никакой боли, никакого глубокого давления — только спокойствие и присутствие.</p>
+                <p><span class="mnushi-label">Что вы почувствуете:</span> Снижение тревожности, улучшение сна, легкость в теле и уме.</p>
+            </div>
+
+            <!-- MONTENEGRIN -->
+            <div class="text-mne" style="display:none;">
+                <p><strong>MNUSHI</strong> je nežna C-taktilna neurorelaksacija (Meditative Neurorelaxation Unique Somatic Healing Interaction). To nije medicinska masaža — to je duboka praksa opuštanja za vaš nervni sistem.</p>
+                <p><span class="mnushi-label">Za koga?</span> Za sve koji osjećaju stres, umor ili jednostavno žele povratiti unutrašnji balans. Bez bola, bez dubokog pritiska — samo smirenost i prisutnost.</p>
+                <p><span class="mnushi-label">Šta ćete osjetiti:</span> Smanjenje anksioznosti, bolji san, lakoća u tijelu i umu.</p>
+            </div>
+
+            <!-- ENGLISH -->
+            <div class="text-en" style="display:none;">
+                <p><strong>MNUSHI</strong> is a gentle, C-tactile neurorelaxation method (Meditative Neurorelaxation Unique Somatic Healing Interaction). It's not a medical massage — it's a deep relaxation practice for your nervous system.</p>
+                <p><span class="mnushi-label">Who is it for?</span> For anyone feeling stress, fatigue, or simply wanting to restore inner balance. No pain, no deep pressure — just calm and presence.</p>
+                <p><span class="mnushi-label">What you'll feel:</span> Reduced anxiety, better sleep, lighter body and mind.</p>
+            </div>
+
+            <!-- UKRAINIAN -->
+            <div class="text-ua" style="display:none;">
+                <p><strong>MNUSHI</strong> — це м'яка С-тактильна нейрорелаксація (Meditative Neurorelaxation Unique Somatic Healing Interaction). Це не лікувальний масаж — це глибока розслаблююча практика для вашої нервової системи.</p>
+                <p><span class="mnushi-label">Для кого?</span> Для всіх, хто відчуває стрес, втому або просто хоче відновити внутрішній баланс. Жодного болю, жодного глибокого тиску — тільки спокій і присутність.</p>
+                <p><span class="mnushi-label">Що ви відчуєте:</span> Зниження тривожності, покращення сну, легкість у тілі та розумі.</p>
+            </div>
         </div>
 
         <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
