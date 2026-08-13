@@ -17,16 +17,20 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
 
+        .container {
+            max-width: 480px;
+            width: 100%;
+            padding: 20px 0 40px;
+        }
+
+        /* ===== КАРТОЧКА ===== */
         .card {
             background-color: #F5F0E8;
-            max-width: 420px;
             width: 100%;
-            padding: 40px 30px 35px;
+            padding: 30px 20px 35px;
             border-radius: 24px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
@@ -34,36 +38,34 @@
             margin-top: 70px;
         }
 
-        /* ===== ФОТО — РОВНО 50% ВЫСОТЫ ЭКРАНА, БЕЗ ОБРЕЗКИ ===== */
+        /* ===== ФОТО ===== */
         .photo {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 16px;
-            height: 50vh;
             width: 100%;
         }
 
         .photo img {
-            height: 100%;
-            width: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            aspect-ratio: 1 / 1.2;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
             display: block;
         }
 
         /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ===== */
         .lang-switcher {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 16px;
+            left: 16px;
             display: flex;
-            gap: 10px;
-            font-size: 14px;
-            font-weight: 600;
+            flex-wrap: wrap;
+            gap: 6px;
             z-index: 9999;
             background: transparent;
         }
@@ -72,23 +74,22 @@
             background: rgba(255, 255, 255, 0.95);
             border: 2px solid #1A2F4F;
             color: #1A2F4F;
-            padding: 8px 16px 8px 12px;
+            padding: 6px 12px 6px 8px;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: inherit;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 1;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            gap: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .lang-btn:hover {
             background-color: #f0ebe3;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .lang-btn.active {
@@ -97,18 +98,11 @@
             color: #ffffff;
         }
 
-        .lang-btn.active:hover {
-            background-color: #0F1F33;
-        }
-
         .lang-flag {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 3px;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
@@ -135,7 +129,7 @@
             background-color: #1A2F4F;
             margin: 22px 0 20px;
             border-radius: 4px;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         /* ===== ИМЯ ===== */
@@ -148,13 +142,6 @@
             margin-bottom: 4px;
         }
 
-        .name span {
-            font-weight: 300;
-            font-size: 20px;
-            color: #6B7F5A;
-        }
-
-        /* ===== ПОДЗАГОЛОВОК ===== */
         .title {
             font-size: 16px;
             font-weight: 500;
@@ -168,40 +155,20 @@
             font-weight: 700;
         }
 
-        /* ===== СЛОГАН — КРУПНЫЙ И ЖИРНЫЙ ===== */
         .slogan {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 700;
             font-style: italic;
             color: #1A2F4F;
-            margin-top: 16px;
+            margin-top: 12px;
             line-height: 1.3;
             padding: 0 5px;
-            letter-spacing: 0.5px;
-        }
-
-        /* ===== АДРЕС (ТОЛЬКО ВНИЗУ) ===== */
-        .address {
-            font-size: 15px;
-            color: #4A5D3C;
-            margin-top: 18px;
-            line-height: 1.6;
-        }
-
-        .address .salon {
-            font-weight: 600;
-            color: #1A2F4F;
-        }
-
-        .address .note {
-            font-size: 13px;
-            color: #7A8A6A;
         }
 
         /* ===== БЛОК MNUSHI ===== */
         .mnushi-block {
-            margin-top: 24px;
-            padding: 20px 18px;
+            margin-top: 20px;
+            padding: 20px 16px;
             background-color: rgba(26, 47, 79, 0.04);
             border-radius: 16px;
             border: 1px solid rgba(26, 47, 79, 0.10);
@@ -233,34 +200,105 @@
             color: #1A2F4F;
         }
 
-        /* ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" — КРУПНЫЙ И ЯРКИЙ ===== */
+        /* ===== ЦЕНЫ ===== */
+        .prices-block {
+            margin-top: 20px;
+            padding: 20px 16px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e5ddd0;
+            text-align: left;
+        }
+
+        .prices-block .prices-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1A2F4F;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .price-category {
+            font-weight: 700;
+            color: #4A5D3C;
+            font-size: 16px;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 1px dashed #ddd5c8;
+            padding-bottom: 4px;
+        }
+
+        .price-category:first-of-type {
+            margin-top: 0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 3px 0;
+            color: #2A3F4F;
+        }
+
+        .price-item .price-desc {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .price-item .price-value {
+            font-weight: 600;
+            color: #1A2F4F;
+            white-space: nowrap;
+        }
+
+        .price-item .price-sub {
+            font-size: 12px;
+            color: #7A8A6A;
+            display: block;
+            font-weight: 400;
+        }
+
+        .price-action {
+            margin-top: 16px;
+            padding: 12px;
+            background-color: rgba(26, 47, 79, 0.06);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1A2F4F;
+            border: 1px dashed #1A2F4F;
+        }
+
+        /* ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" ===== */
         .booking-title {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: #1A2F4F;
             letter-spacing: 2px;
-            margin: 6px 0 16px 0;
+            margin: 10px 0 16px 0;
             text-transform: uppercase;
             padding: 8px 0;
-            border-bottom: 3px solid rgba(26, 47, 79, 0.15);
+            border-bottom: 3px solid rgba(26, 47, 79, 0.12);
         }
 
         /* ===== КНОПКИ ===== */
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 6px;
+            gap: 10px;
+            margin-top: 4px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding: 14px 24px;
+            padding: 13px 20px;
             border-radius: 60px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             transition: all 0.2s ease;
             border: 1.5px solid transparent;
@@ -272,7 +310,6 @@
             transform: scale(0.97);
         }
 
-        /* ===== ИКОНКИ ===== */
         .btn-icon {
             width: 24px;
             height: 24px;
@@ -290,7 +327,7 @@
             display: block;
         }
 
-        /* ===== TELEGRAM ===== */
+        /* ===== ЦВЕТА КНОПОК ===== */
         .btn-telegram {
             background-color: #0088cc;
             color: #ffffff;
@@ -303,7 +340,6 @@
             filter: brightness(0) invert(1);
         }
 
-        /* ===== WHATSAPP ===== */
         .btn-whatsapp {
             background-color: transparent;
             color: #25D366;
@@ -316,7 +352,6 @@
             filter: none;
         }
 
-        /* ===== VIBER ===== */
         .btn-viber {
             background-color: #7360f2;
             color: #ffffff;
@@ -329,7 +364,6 @@
             filter: brightness(0) invert(1);
         }
 
-        /* ===== INSTAGRAM ===== */
         .btn-instagram {
             background-color: #ffffff;
             color: #1A2F4F;
@@ -349,7 +383,6 @@
             opacity: 0;
         }
 
-        /* ===== THREADS ===== */
         .btn-threads {
             background-color: #000000;
             color: #ffffff;
@@ -362,7 +395,6 @@
             filter: brightness(0) invert(1);
         }
 
-        /* ===== EMAIL ===== */
         .btn-email {
             background-color: transparent;
             color: #D93025;
@@ -375,7 +407,6 @@
             filter: brightness(0) saturate(100%) invert(42%) sepia(80%) saturate(2000%) hue-rotate(340deg) brightness(90%) contrast(90%);
         }
 
-        /* ===== PHONE ===== */
         .btn-phone {
             background-color: transparent;
             color: #4A5D3C;
@@ -385,32 +416,75 @@
             background-color: #efe8dd;
         }
         .btn-phone .btn-icon {
-            font-size: 22px;
-            line-height: 1;
+            font-size: 20px;
             width: auto;
             height: auto;
         }
 
-        /* ===== ПОДВАЛ (удален, адрес перенесен в конец) ===== */
+        /* ===== КАРТА ===== */
+        .map-container {
+            margin-top: 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5ddd0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 200px;
+            border: 0;
+        }
+
+        /* ===== АДРЕС ===== */
+        .address {
+            font-size: 15px;
+            color: #4A5D3C;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        .address .salon {
+            font-weight: 600;
+            color: #1A2F4F;
+        }
+
+        .address .note {
+            font-size: 13px;
+            color: #7A8A6A;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #9A8A7A;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
         /* ===== АДАПТИВ ===== */
         @media (max-width: 480px) {
+            .container {
+                padding: 10px 0 30px;
+            }
             .card {
-                padding: 30px 20px 25px;
+                padding: 20px 14px 25px;
                 margin-top: 60px;
             }
             .name {
                 font-size: 24px;
             }
             .slogan {
-                font-size: 20px;
-                font-style: italic;
+                font-size: 18px;
             }
             .booking-title {
                 font-size: 22px;
             }
             .btn {
-                font-size: 15px;
-                padding: 12px 20px;
+                font-size: 14px;
+                padding: 11px 16px;
             }
             .btn-icon {
                 width: 22px;
@@ -418,40 +492,47 @@
                 margin-right: 12px;
             }
             .lang-switcher {
-                top: 12px;
-                left: 12px;
-                gap: 6px;
+                top: 10px;
+                left: 10px;
+                gap: 4px;
             }
             .lang-btn {
-                padding: 6px 12px 6px 8px;
-                font-size: 11px;
-                gap: 4px;
-                border-width: 1.5px;
+                padding: 5px 10px 5px 6px;
+                font-size: 10px;
+                gap: 3px;
             }
             .lang-flag {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
             }
-
-            .photo {
-                height: 40vh;
+            .photo img {
+                aspect-ratio: 1 / 1.1;
             }
-
-            .mnushi-block {
-                padding: 16px 14px;
+            .mnushi-block,
+            .prices-block {
+                padding: 14px 12px;
             }
-            .mnushi-block .mnushi-title {
-                font-size: 18px;
+            .price-item {
+                font-size: 13px;
+                flex-wrap: wrap;
             }
-            .mnushi-block p {
-                font-size: 14px;
+            .price-item .price-desc {
+                flex: 1 1 100%;
+                padding-right: 0;
+            }
+            .price-item .price-value {
+                flex: 0 0 auto;
+                margin-top: 2px;
+            }
+            .map-container iframe {
+                height: 150px;
             }
         }
 
-        @media (min-height: 900px) {
-            .photo {
-                height: 50vh;
-                max-height: 500px;
+        @media (min-width: 600px) {
+            .photo img {
+                max-width: 500px;
+                aspect-ratio: 1 / 1.1;
             }
         }
     </style>
@@ -461,186 +542,223 @@
     <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
     <div class="lang-switcher">
         <button class="lang-btn active" data-lang="ru">
-            <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/ru.png" alt="RU" />
-            </span>
-            RU
+            <span class="lang-flag"><img src="https://flagcdn.com/w40/ru.png" alt="RU" /></span> RU
         </button>
         <button class="lang-btn" data-lang="mne">
-            <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/me.png" alt="MNE" />
-            </span>
-            MNE
+            <span class="lang-flag"><img src="https://flagcdn.com/w40/me.png" alt="MNE" /></span> MNE
         </button>
         <button class="lang-btn" data-lang="en">
-            <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/gb.png" alt="EN" />
-            </span>
-            EN
+            <span class="lang-flag"><img src="https://flagcdn.com/w40/gb.png" alt="EN" /></span> EN
         </button>
         <button class="lang-btn" data-lang="ua">
-            <span class="lang-flag">
-                <img src="https://flagcdn.com/w40/ua.png" alt="UA" />
-            </span>
-            UA
+            <span class="lang-flag"><img src="https://flagcdn.com/w40/ua.png" alt="UA" /></span> UA
         </button>
     </div>
 
-    <div class="card">
+    <div class="container">
+        <div class="card">
 
-        <!-- ФОТО -->
-        <div class="photo">
-            <img src="photo_denis.jpg" alt="Денис Дмитриенко">
-        </div>
-        
-        <!-- ИМЯ -->
-        <div class="name">
-            DENIS DMITRIENKO
-        </div>
-
-        <!-- ПОДЗАГОЛОВОК -->
-        <div class="title">
-            <span class="text-ru">Мастер массажной <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
-            <span class="text-mne" style="display:none;">Majstor masažne <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
-            <span class="text-en" style="display:none;">Master of massage <strong>C-tactile</strong><br /> neurorelaxation <strong>MNUSHI</strong></span>
-            <span class="text-ua" style="display:none;">Майстер масажної <strong>С-тактильної</strong><br /> нейрорелаксації <strong>MNUSHI</strong></span>
-        </div>
-
-        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
-        <div class="divider-wide"></div>
-
-        <!-- СЛОГАН -->
-        <div class="slogan">
-            <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
-            <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
-            <span class="text-en" style="display:none;">«Peace and tranquility for your nervous system»</span>
-            <span class="text-ua" style="display:none;">«Тиша та спокій для вашої нервової системи»</span>
-        </div>
-
-        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
-        <div class="divider-wide"></div>
-
-        <!-- ===== БЛОК MNUSHI ===== -->
-        <div class="mnushi-block">
-            <div class="mnushi-title">
-                <span class="text-ru">Что такое MNUSHI?</span>
-                <span class="text-mne" style="display:none;">Šta je MNUSHI?</span>
-                <span class="text-en" style="display:none;">What is MNUSHI?</span>
-                <span class="text-ua" style="display:none;">Що таке MNUSHI?</span>
+            <!-- ФОТО -->
+            <div class="photo">
+                <img src="photo_denis.jpg" alt="Денис Дмитриенко — мастер нейрорелаксации MNUSHI">
             </div>
 
-            <!-- RUSSIAN -->
-            <div class="text-ru">
-                <p><strong>MNUSHI</strong> — это мягкая С-тактильная нейрорелаксация (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). Это не лечебный массаж — это глубокая расслабляющая практика для вашей нервной системы.</p>
-                <p><span class="mnushi-label">Для кого?</span> Для всех, кто чувствует стресс, усталость или просто хочет восстановить внутренний баланс. Никакой боли, никакого глубокого давления — только спокойствие и присутствие.</p>
-                <p><span class="mnushi-label">Что вы почувствуете:</span> Снижение тревожности, улучшение сна, легкость в теле и уме.</p>
+            <!-- ИМЯ -->
+            <div class="name">DENIS DMITRIENKO</div>
+
+            <!-- ПОДЗАГОЛОВОК -->
+            <div class="title">
+                <span class="text-ru">Мастер массажной <strong>С-тактильной</strong><br /> нейрорелаксации <strong>MNUSHI</strong></span>
+                <span class="text-mne" style="display:none;">Majstor masažne <strong>C-taktilne</strong><br /> neurorelaksacije <strong>MNUSHI</strong></span>
+                <span class="text-en" style="display:none;">Master of massage <strong>C-tactile</strong><br /> neurorelaxation <strong>MNUSHI</strong></span>
+                <span class="text-ua" style="display:none;">Майстер масажної <strong>С-тактильної</strong><br /> нейрорелаксації <strong>MNUSHI</strong></span>
             </div>
 
-            <!-- MONTENEGRIN -->
-            <div class="text-mne" style="display:none;">
-                <p><strong>MNUSHI</strong> je nežna C-taktilna neurorelaksacija (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). To nije medicinska masaža — to je duboka praksa opuštanja za vaš nervni sistem.</p>
-                <p><span class="mnushi-label">Za koga?</span> Za sve koji osjećaju stres, umor ili jednostavno žele povratiti unutrašnji balans. Bez bola, bez dubokog pritiska — samo smirenost i prisutnost.</p>
-                <p><span class="mnushi-label">Šta ćete osjetiti:</span> Smanjenje anksioznosti, bolji san, lakoća u tijelu i umu.</p>
+            <div class="divider-wide"></div>
+
+            <!-- СЛОГАН -->
+            <div class="slogan">
+                <span class="text-ru">«Тишина и покой для вашей нервной системы»</span>
+                <span class="text-mne" style="display:none;">«Tišina i mir za vaš nervni sistem»</span>
+                <span class="text-en" style="display:none;">«Peace and tranquility for your nervous system»</span>
+                <span class="text-ua" style="display:none;">«Тиша та спокій для вашої нервової системи»</span>
             </div>
 
-            <!-- ENGLISH -->
-            <div class="text-en" style="display:none;">
-                <p><strong>MNUSHI</strong> is a gentle, C-tactile neurorelaxation method (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). It's not a medical massage — it's a deep relaxation practice for your nervous system.</p>
-                <p><span class="mnushi-label">Who is it for?</span> For anyone feeling stress, fatigue, or simply wanting to restore inner balance. No pain, no deep pressure — just calm and presence.</p>
-                <p><span class="mnushi-label">What you'll feel:</span> Reduced anxiety, better sleep, lighter body and mind.</p>
+            <div class="divider-wide"></div>
+
+            <!-- ===== БЛОК MNUSHI ===== -->
+            <div class="mnushi-block">
+                <div class="mnushi-title">
+                    <span class="text-ru">Что такое MNUSHI?</span>
+                    <span class="text-mne" style="display:none;">Šta je MNUSHI?</span>
+                    <span class="text-en" style="display:none;">What is MNUSHI?</span>
+                    <span class="text-ua" style="display:none;">Що таке MNUSHI?</span>
+                </div>
+
+                <div class="text-ru">
+                    <p><strong>MNUSHI</strong> — это мягкая С-тактильная нейрорелаксация (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). Это не лечебный массаж — это глубокая расслабляющая практика для вашей нервной системы.</p>
+                    <p><span class="mnushi-label">Для кого?</span> Для всех, кто чувствует стресс, усталость или просто хочет восстановить внутренний баланс. Никакой боли, никакого глубокого давления — только спокойствие и присутствие.</p>
+                    <p><span class="mnushi-label">Что вы почувствуете:</span> Снижение тревожности, улучшение сна, легкость в теле и уме.</p>
+                </div>
+                <div class="text-mne" style="display:none;">
+                    <p><strong>MNUSHI</strong> je nežna C-taktilna neurorelaksacija (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). To nije medicinska masaža — to je duboka praksa opuštanja za vaš nervni sistem.</p>
+                    <p><span class="mnushi-label">Za koga?</span> Za sve koji osjećaju stres, umor ili jednostavno žele povratiti unutrašnji balans. Bez bola, bez dubokog pritiska — samo smirenost i prisutnost.</p>
+                    <p><span class="mnushi-label">Šta ćete osjetiti:</span> Smanjenje anksioznosti, bolji san, lakoća u tijelu i umu.</p>
+                </div>
+                <div class="text-en" style="display:none;">
+                    <p><strong>MNUSHI</strong> is a gentle, C-tactile neurorelaxation method (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). It's not a medical massage — it's a deep relaxation practice for your nervous system.</p>
+                    <p><span class="mnushi-label">Who is it for?</span> For anyone feeling stress, fatigue, or simply wanting to restore inner balance. No pain, no deep pressure — just calm and presence.</p>
+                    <p><span class="mnushi-label">What you'll feel:</span> Reduced anxiety, better sleep, lighter body and mind.</p>
+                </div>
+                <div class="text-ua" style="display:none;">
+                    <p><strong>MNUSHI</strong> — це м'яка С-тактильна нейрорелаксація (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). Це не лікувальний масаж — це глибока розслаблююча практика для вашої нервової системи.</p>
+                    <p><span class="mnushi-label">Для кого?</span> Для всіх, хто відчуває стрес, втому або просто хоче відновити внутрішній баланс. Жодного болю, жодного глибокого тиску — тільки спокій і присутність.</p>
+                    <p><span class="mnushi-label">Що ви відчуєте:</span> Зниження тривожності, покращення сну, легкість у тілі та розумі.</p>
+                </div>
             </div>
 
-            <!-- UKRAINIAN -->
-            <div class="text-ua" style="display:none;">
-                <p><strong>MNUSHI</strong> — це м'яка С-тактильна нейрорелаксація (<b>M</b>editative <b>N</b>eurorelaxation <b>U</b>nique <b>S</b>omatic <b>H</b>ealing <b>I</b>nteraction). Це не лікувальний масаж — це глибока розслаблююча практика для вашої нервової системи.</p>
-                <p><span class="mnushi-label">Для кого?</span> Для всіх, хто відчуває стрес, втому або просто хоче відновити внутрішній баланс. Жодного болю, жодного глибокого тиску — тільки спокій і присутність.</p>
-                <p><span class="mnushi-label">Що ви відчуєте:</span> Зниження тривожності, покращення сну, легкість у тілі та розумі.</p>
+            <!-- ===== БЛОК ЦЕН ===== -->
+            <div class="prices-block">
+                <div class="prices-title">
+                    <span class="text-ru">💆 Прайс-лист</span>
+                    <span class="text-mne" style="display:none;">💆 Cjenovnik</span>
+                    <span class="text-en" style="display:none;">💆 Price list</span>
+                    <span class="text-ua" style="display:none;">💆 Прайс-лист</span>
+                </div>
+
+                <!-- 1. Нейрорелаксация MNUSHI -->
+                <div class="price-category">
+                    <span class="text-ru">Нейрорелаксация MNUSHI (через одежду)</span>
+                    <span class="text-mne" style="display:none;">Neurorelaksacija MNUSHI (preko odeće)</span>
+                    <span class="text-en" style="display:none;">MNUSHI Neurorelaxation (through clothing)</span>
+                    <span class="text-ua" style="display:none;">Нейрорелаксація MNUSHI (через одяг)</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">60 мин — классическая С-тактильная нейрорелаксация</span>
+                    <span class="price-value">40 €</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">90 мин — глубокая С-тактильная + элементы пульсинга</span>
+                    <span class="price-value">60 €</span>
+                </div>
+
+                <!-- 2. Нейрорелаксация с маслами (PREMIUM) -->
+                <div class="price-category">
+                    <span class="text-ru">Нейрорелаксация с натуральными маслами (PREMIUM)</span>
+                    <span class="text-mne" style="display:none;">Neurorelaksacija uz prirodna ulja (PREMIUM)</span>
+                    <span class="text-en" style="display:none;">Neurorelaxation with natural oils (PREMIUM)</span>
+                    <span class="text-ua" style="display:none;">Нейрорелаксація з натуральними маслами (PREMIUM)</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">60 мин — сенсорная нейрорелаксация</span>
+                    <span class="price-value">40 €</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">90 мин — глубокая сенсорная + элементы тайского йога-массажа</span>
+                    <span class="price-value">60 €</span>
+                </div>
+
+                <!-- 3. Экспресс-зоны и демо-массажи -->
+                <div class="price-category">
+                    <span class="text-ru">Экспресс-зоны и демо-массажи</span>
+                    <span class="text-mne" style="display:none;">Ekspres zone i demo masaže</span>
+                    <span class="text-en" style="display:none;">Express zones & demo massages</span>
+                    <span class="text-ua" style="display:none;">Експрес-зони та демо-масажі</span>
+                    <span class="price-sub" style="display:block;font-weight:400;">30 мин — 25 €</span>
+                </div>
+                <div class="price-item" style="flex-wrap:wrap;">
+                    <span class="price-desc">Массаж головы / затылка / шеи / плеч / спины / поясницы / стоп / рук / позвоночника</span>
+                    <span class="price-value">25 €</span>
+                </div>
+
+                <!-- 4. Специальные виды -->
+                <div class="price-category">
+                    <span class="text-ru">Специальные виды массажа</span>
+                    <span class="text-mne" style="display:none;">Specijalne vrste masaže</span>
+                    <span class="text-en" style="display:none;">Special massages</span>
+                    <span class="text-ua" style="display:none;">Спеціальні види масажу</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">Для беременных (на боку) — снятие тяжести в крестце и ногах</span>
+                    <span class="price-value">40 €</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-desc">Для молодых мам / при послеродовой депрессии</span>
+                    <span class="price-value">40 €</span>
+                </div>
+
+                <!-- АКЦИЯ -->
+                <div class="price-action">
+                    <span class="text-ru">🎁 Акция! Первый сеанс — выберите фитобочку или массаж стоп в подарок!</span>
+                    <span class="text-mne" style="display:none;">🎁 Akcija! Prvi tretman — birajte fitobure ili masažu stopala na poklon!</span>
+                    <span class="text-en" style="display:none;">🎁 Special offer! First session — choose a phyto-barrel or foot massage as a gift!</span>
+                    <span class="text-ua" style="display:none;">🎁 Акція! Перший сеанс — оберіть фітобочку або масаж стоп у подарунок!</span>
+                </div>
             </div>
-        </div>
 
-        <!-- ШИРОКИЙ РАЗДЕЛИТЕЛЬ -->
-        <div class="divider-wide"></div>
-        
-        <!-- ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" ===== -->
-        <div class="booking-title">
-            <span class="text-ru">ЗАПИСАТЬСЯ</span>
-            <span class="text-mne" style="display:none;">ZAKAŽITE</span>
-            <span class="text-en" style="display:none;">BOOK NOW</span>
-            <span class="text-ua" style="display:none;">ЗАПИСАТИСЯ</span>
-        </div>
-        
-        <!-- КНОПКИ СВЯЗИ -->
-        <div class="buttons">
+            <div class="divider-wide"></div>
 
-            <!-- TELEGRAM -->
-            <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/telegram.svg" alt="Telegram" />
-                </span>
-                Telegram
-            </a>
+            <!-- ===== ЗАГОЛОВОК "ЗАПИСАТЬСЯ" ===== -->
+            <div class="booking-title">
+                <span class="text-ru">ЗАПИСАТЬСЯ</span>
+                <span class="text-mne" style="display:none;">ZAKAŽITE</span>
+                <span class="text-en" style="display:none;">BOOK NOW</span>
+                <span class="text-ua" style="display:none;">ЗАПИСАТИСЯ</span>
+            </div>
 
-            <!-- WHATSAPP -->
-            <a href="https://wa.me/38268387810" target="_blank" class="btn btn-whatsapp">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="WhatsApp" />
-                </span>
-                WhatsApp
-            </a>
+            <!-- КНОПКИ СВЯЗИ -->
+            <div class="buttons">
+                <a href="https://t.me/castasat" target="_blank" class="btn btn-telegram">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/telegram.svg" alt="Telegram" /></span> Telegram
+                </a>
+                <a href="https://wa.me/38268387810" target="_blank" class="btn btn-whatsapp">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="WhatsApp" /></span> WhatsApp
+                </a>
+                <a href="viber://contact?number=+38268387810" target="_blank" class="btn btn-viber">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/viber.svg" alt="Viber" /></span> Viber
+                </a>
+                <a href="https://www.instagram.com/massage_denis_hn/" target="_blank" class="btn btn-instagram">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg" alt="Instagram" /></span> Instagram
+                </a>
+                <a href="https://www.threads.net/@massage_denis_hn" target="_blank" class="btn btn-threads">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/threads.svg" alt="Threads" /></span> Threads
+                </a>
+                <a href="mailto:castasat@gmail.com" class="btn btn-email">
+                    <span class="btn-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg" alt="Email" /></span> castasat@gmail.com
+                </a>
+                <a href="tel:+38268387810" class="btn btn-phone">
+                    <span class="btn-icon">📞</span> +382 68 387 810
+                </a>
+            </div>
 
-            <!-- VIBER -->
-            <a href="viber://contact?number=+38268387810" target="_blank" class="btn btn-viber">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/viber.svg" alt="Viber" />
-                </span>
-                Viber
-            </a>
+            <!-- ===== КАРТА ===== -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2945.5123456789!2d18.5372!3d42.4531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c3a1234567890%3A0x1234567890abcdef!2sNjego%C5%A1eva%20168%2C%20Herceg%20Novi!5e0!3m2!1sen!2sme!4v1700000000000" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
 
-            <!-- INSTAGRAM -->
-            <a href="https://www.instagram.com/massage_denis_hn/" target="_blank" class="btn btn-instagram">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg" alt="Instagram" />
-                </span>
-                Instagram
-            </a>
-
-            <!-- THREADS -->
-            <a href="https://www.threads.net/@massage_denis_hn" target="_blank" class="btn btn-threads">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/threads.svg" alt="Threads" />
-                </span>
-                Threads
-            </a>
-
-            <!-- EMAIL -->
-            <a href="mailto:castasat@gmail.com" class="btn btn-email">
-                <span class="btn-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg" alt="Email" />
-                </span>
-                castasat@gmail.com
-            </a>
-
-            <!-- ПОЗВОНИТЬ -->
-            <a href="tel:+38268387810" class="btn btn-phone">
-                <span class="btn-icon">📞</span>
-                +382 68 387 810
-            </a>
+            <!-- ===== АДРЕС ===== -->
+            <div class="address">
+                <span class="salon">📍 Shine Beauty Salon</span><br />
+                <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 (бывший Relax)</span>
+                <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (bivši Relax)</span>
+                <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (former Relax)</span>
+                <span class="text-ua" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 (колишній Relax)</span>
+            </div>
 
         </div>
 
-        <!-- ===== АДРЕС (ТОЛЬКО ВНИЗУ) ===== -->
-        <div class="address">
-            <span class="salon">📍 Shine Beauty Salon</span><br />
-            <span class="text-ru">Herceg Novi, ul. Njegoseva, br. 168 <br />(бывший Relax)</span>
-            <span class="text-mne" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(bivši Relax)</span>
-            <span class="text-en" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(former Relax)</span>
-            <span class="text-ua" style="display:none;">Herceg Novi, ul. Njegoseva, br. 168 <br />(колишній Relax)</span>
+        <div class="footer-note">
+            Denis Dmitrienko — MNUSHI Neurorelaxation
         </div>
-        
     </div>
 
+    <!-- ===== ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ ===== -->
     <script>
-        // ===== ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ =====
         document.addEventListener('DOMContentLoaded', function() {
             const langBtns = document.querySelectorAll('.lang-btn');
             const langElements = document.querySelectorAll('[class*="text-"]');
@@ -649,32 +767,25 @@
                 langElements.forEach(el => {
                     el.style.display = 'none';
                 });
-
-                const selectedElements = document.querySelectorAll('.text-' + lang);
-                selectedElements.forEach(el => {
+                document.querySelectorAll('.text-' + lang).forEach(el => {
                     el.style.display = '';
                 });
-
                 langBtns.forEach(btn => {
                     btn.classList.remove('active');
-                    if (btn.dataset.lang === lang) {
-                        btn.classList.add('active');
-                    }
+                    if (btn.dataset.lang === lang) btn.classList.add('active');
                 });
-
                 localStorage.setItem('preferredLang', lang);
             }
 
             langBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    const lang = this.dataset.lang;
-                    setLanguage(lang);
+                    setLanguage(this.dataset.lang);
                 });
             });
 
-            const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang && ['ru', 'mne', 'en', 'ua'].includes(savedLang)) {
-                setLanguage(savedLang);
+            const saved = localStorage.getItem('preferredLang');
+            if (saved && ['ru', 'mne', 'en', 'ua'].includes(saved)) {
+                setLanguage(saved);
             } else {
                 setLanguage('ru');
             }
